@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>화인파트너스 AI · 사후관리 / 회수</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+<header class="app-header" id="appHeader"></header>
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <div class="main">
+    <div class="topbar">
+      <a href="cockpit.html" class="crumb-back" title="코크핏으로"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <nav class="crumb"><a href="cockpit.html">메인</a><span>·</span><a>Portfolio</a><span>·</span><strong>사후관리 / 회수</strong></nav>
+      <div class="topbar-spacer"></div>
+      <div class="topbar-pill"><span class="dot"></span>ERP 동기화 09:42</div>
+      <button class="btn sm primary" id="agentToggle"><span class="agent-pulse"></span>AI Agent 열기</button>
+    </div>
+
+    <div class="content">
+      <div class="content-inner" id="cnt"></div>
+    </div>
+  </div>
+
+  <aside class="agent" id="agentPanel"></aside>
+  <div class="agent-scrim" id="agentScrim"></div>
+
+  <!-- AI 근거 모달 -->
+  <div class="why-overlay" id="whyOverlay">
+    <div class="why-modal">
+      <div class="why-head">
+        <div class="why-head-icon"></div>
+        <div class="why-head-text"><div class="why-head-title" id="whyTitle">AI 분석 근거</div><div class="why-head-sub" id="whySub">분석 기준 시점 · 데이터 출처</div></div>
+        <button class="why-close" id="whyClose">✕</button>
+      </div>
+      <div class="why-body" id="whyBody"></div>
+      <div class="why-foot">본 분석은 AI가 ERP·시장 데이터를 기반으로 생성한 참고 자료입니다. 최종 투자·회수 판단은 담당자와 투자심의회의 검토를 거쳐 결정됩니다.</div>
+    </div>
+  </div>
+</div>
+
+<script src="shell.js"></script>
+<script src="portfolio.js"></script>
+<script src="portfolio-agent.js"></script>
+</body>
+</html>

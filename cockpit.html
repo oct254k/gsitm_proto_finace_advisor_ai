@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>화인파트너스 AI · Dashboard</title>
+<meta name="ext-resource-dependency" content="assets/logo-fine.png" data-resource-id="logo" />
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="cockpit.css">
+</head>
+<body>
+<header class="app-header" id="appHeader"></header>
+<div class="app">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <!-- ===== MAIN ===== -->
+  <div class="main">
+    <div class="topbar">
+      <div class="ai-hero" tabindex="0">
+        <span class="ai-bot"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><defs><linearGradient id="aiBotGrad" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#5f3cff"/><stop offset="46%" stop-color="#4cd5ff"/><stop offset="100%" stop-color="#56fffc"/></linearGradient></defs><path d="M12 1.8l8.66 5v10.4L12 22.2 3.34 17.2V6.8z" fill="url(#aiBotGrad)"/><rect x="8" y="10.2" width="8" height="6" rx="2" fill="#fff"/><rect x="11.4" y="7.4" width="1.2" height="2.6" rx="0.6" fill="#fff"/><circle cx="12" cy="6.9" r="1.1" fill="#fff"/><circle cx="10.2" cy="13.2" r="1" fill="url(#aiBotGrad)"/><circle cx="13.8" cy="13.2" r="1" fill="url(#aiBotGrad)"/></svg></span>
+        <span class="ph">자연어로 질문하세요 — "우진기전 회수 스케줄" · "이번 달 가용 자금" · "신재생 유사 딜 찾아줘"</span>
+        <span class="kbd">⌘K</span>
+      </div>
+      <button class="topbar-icon" title="알림"><svg width="19" height="19" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.7"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.4-1.4A2 2 0 0118 14.2V11a6 6 0 00-4-5.7V5a2 2 0 10-4 0v.3C7.7 6.2 6 8.4 6 11v3.2c0 .5-.2 1-.6 1.4L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg><span class="nd"></span></button>
+      <div class="topbar-pill"><span class="dot"></span>ERP 동기화 <span class="num">3</span>분 전</div>
+    </div>
+
+    <div class="content">
+      <div class="content-inner" id="cnt"></div>
+      <div class="foot" style="max-width:1660px;margin:24px auto 0;display:flex;justify-content:space-between;font-size:11.5px;color:var(--t4);padding:0 2px">
+        <div>화인파트너스 AI Investment Decision System · v0.4.0 (Beta)</div>
+        <div>ERP 연동 · 한국거래소 · 한국은행 · Bloomberg · 마지막 동기화 09:39</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="shell.js"></script>
+<script src="cockpit.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#f3f4f6">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#f3f4f6"/>
+    <rect x="0" y="0" width="1200" height="70" fill="#ffffff"/>
+    <circle cx="58" cy="35" r="16" fill="#e0392b"/>
+    <rect x="0" y="70" width="300" height="730" fill="#f9fafb"/>
+    <rect x="340" y="110" width="820" height="150" rx="16" fill="#5a6abc"/>
+    <rect x="340" y="290" width="500" height="220" rx="16" fill="#ffffff"/>
+    <rect x="870" y="290" width="290" height="220" rx="16" fill="#ffffff"/>
+    <rect x="340" y="540" width="820" height="180" rx="16" fill="#ffffff"/>
+  </svg>
+</template>
+</body>
+</html>
