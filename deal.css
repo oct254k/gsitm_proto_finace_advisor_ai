@@ -149,19 +149,23 @@
 
 /* risk table */
 .risk-table{border:1px solid var(--line-soft);border-radius:var(--radius-md);overflow:hidden}
-.risk-head,.risk-row{display:grid;grid-template-columns:96px 1fr 92px 56px;gap:12px;align-items:center}
+.risk-head,.risk-row{display:grid;grid-template-columns:96px 1fr 110px 80px 100px;gap:12px;align-items:center}
 .risk-head{padding:11px 16px;background:#eef2fb;font-size:11.5px;font-weight:600;color:var(--t3);letter-spacing:0}
-.risk-row{padding:14px 16px;border-top:1px solid var(--line-soft);position:relative;cursor:pointer;transition:.12s}
+.risk-row{padding:14px 16px;border-top:1px solid var(--line-soft);position:relative;cursor:pointer;transition:background .12s}
 .risk-row:hover{background:#fbfcff}
+/* Ask AI 링크 — 상시 표시 (호버 전용 .send-to-ai 규칙 오버라이드) */
+.ask-ai-link{position:static!important;display:inline-flex;align-items:center;gap:4px;background:none!important;border:none!important;color:var(--indigo);font-size:13px;font-weight:700;padding:0!important;opacity:1!important;transform:none!important;box-shadow:none!important;transition:.14s}
+.ask-ai-link svg{width:13px;height:13px}
+.ask-ai-link:hover{color:#2c40b8!important;background:none!important;gap:6px}
 .risk-main{font-size:13px;font-weight:700;color:var(--t1)}
 .risk-detail{font-size:11.5px;color:var(--t3);line-height:1.55;margin-top:3px}
 .conf-mini{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:var(--t2);font-family:var(--num)}
 .conf-bar-mini{flex:1;height:5px;border-radius:99px;background:#eceef2;overflow:hidden;min-width:34px}
 .conf-bar-mini i{display:block;height:100%;background:var(--indigo-grad);border-radius:99px;transition:width .9s}
-.sev-high,.sev-mid,.sev-low{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:8px;font-size:12px;font-weight:700}
-.sev-high{background:var(--red-soft);color:var(--red)}
-.sev-mid{background:var(--amber-soft);color:#b46c00}
-.sev-low{background:var(--surface-3);color:var(--t3)}
+.sev-high,.sev-mid,.sev-low{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;font-size:12.5px;font-weight:700}
+.sev-high{background:#fdeced;color:#e7000b}
+.sev-mid{background:#fdf0e3;color:#f0852a}
+.sev-low{background:#e7f6ed;color:#0a9b46}
 
 /* IC qa */
 .sum-card .ic-qa-item{border:none;border-radius:0;border-top:1px solid var(--line-soft);margin:0;padding:15px 0;background:none}

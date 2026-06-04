@@ -2,19 +2,20 @@
 (function(){
   renderSidebar('cockpit');
 
+  const STAGE_COLOR={'제안접수':'blue','검토':'blue','1차심의':'violet','2차심의':'violet','승인':'green','사후관리':'gray','종결':'gray'};
   const tasks = [
-    {stage:'검토', stageCls:'warn', name:'우진기전 Pre-IPO PEF', sub:'검토보고서 v3 초안 작성 · 전력·에너지', team:['김화','김파'], pct:100, dday:'D-2', ddCls:'urg', href:'deal.html'},
-    {stage:'제안접수', stageCls:'info', name:'케이엠솔라 신기술조합', sub:'IM 분석 결과 검토 · 신재생에너지', team:['김화'], pct:62, dday:'D-3', ddCls:'urg'},
-    {stage:'1차심의', stageCls:'', name:'메디팜글로벌 CB', sub:'IC 자료 업로드 및 발표 준비 · 바이오', team:['김화','박찬'], pct:100, dday:'D-5', ddCls:''},
-    {stage:'사후관리', stageCls:'muted', name:'동성제약 메자닌', sub:'2026 Q1 성과 모니터링 보고 · 바이오', team:['김화'], pct:0, dday:'D-7', ddCls:''},
-    {stage:'2차심의', stageCls:'', name:'한라정밀 Buyout', sub:'본심의 의견서 검토 의견 회신 · 기계', team:['김화','최현','김파'], pct:100, dday:'D-9', ddCls:'ok'},
-    {stage:'검토', stageCls:'', name:'서울리츠 부동산 PF', sub:'시장 데이터 분석 · 부동산', team:['김화'], pct:31, dday:'D-12', ddCls:'ok'},
+    {stage:'검토', name:'우진기전 Pre-IPO PEF', sub:'검토보고서 v3 초안 작성 · 전력·에너지', team:['김화','김파'], pct:100, dday:'D-2', ddCls:'urg', href:'deal.html'},
+    {stage:'제안접수', name:'케이엠솔라 신기술조합', sub:'IM 분석 결과 검토 · 신재생에너지', team:['김화'], pct:62, dday:'D-3', ddCls:'urg'},
+    {stage:'1차심의', name:'메디팜글로벌 CB', sub:'IC 자료 업로드 및 발표 준비 · 바이오', team:['김화','박찬'], pct:100, dday:'D-5', ddCls:''},
+    {stage:'사후관리', name:'동성제약 메자닌', sub:'2026 Q1 성과 모니터링 보고 · 바이오', team:['김화'], pct:0, dday:'D-7', ddCls:''},
+    {stage:'2차심의', name:'한라정밀 Buyout', sub:'본심의 의견서 검토 의견 회신 · 기계', team:['김화','최현','김파'], pct:100, dday:'D-9', ddCls:'ok'},
+    {stage:'검토', name:'서울리츠 부동산 PF', sub:'시장 데이터 분석 · 부동산', team:['김화'], pct:31, dday:'D-12', ddCls:'ok'},
   ];
   const team = [
-    {av:'김화',cls:'c-indigo',name:'김화인',role:'심사역 (나)',deals:[['우진기전 PEF','검토','warn'],['메디팜 CB','1차심의',''],['케이엠솔라','제안','info']],load:85,loadTxt:'높음',loadCls:''},
-    {av:'김파',cls:'c-slate',name:'김파트',role:'심사역',deals:[['우진기전 PEF','검토','warn'],['한라정밀','2차심의','']],load:55,loadTxt:'중간',loadCls:''},
-    {av:'박너',cls:'c-slate',name:'박너스',role:'심사역',deals:[['메디팜 CB','1차심의',''],['서울리츠 PF','검토','warn']],load:50,loadTxt:'중간',loadCls:''},
-    {av:'최현',cls:'c-slate',name:'최현수',role:'심사역',deals:[['한라정밀','2차심의',''],['동성제약','사후관리','muted']],load:30,loadTxt:'여유',loadCls:'ok'},
+    {av:'김화',cls:'c-indigo',name:'김화인',role:'심사역 (나)',deals:[['우진기전 PEF','검토'],['메디팜 CB','1차심의'],['케이엠솔라','제안접수']],load:85,loadTxt:'높음',loadCls:''},
+    {av:'김파',cls:'c-slate',name:'김파트',role:'심사역',deals:[['우진기전 PEF','검토'],['한라정밀','2차심의']],load:55,loadTxt:'중간',loadCls:''},
+    {av:'박너',cls:'c-slate',name:'박너스',role:'심사역',deals:[['메디팜 CB','1차심의'],['서울리츠 PF','검토']],load:50,loadTxt:'중간',loadCls:''},
+    {av:'최현',cls:'c-slate',name:'최현수',role:'심사역',deals:[['한라정밀','2차심의'],['동성제약','사후관리']],load:30,loadTxt:'여유',loadCls:'ok'},
   ];
   const kpis = [
     {l:'총 운용자산 (AUM)', v:'8,420', u:'억원', pill:'+5.2% QoQ', dir:'up', sub:'전분기 8,003억', spark:[24,22,25,18,20,14,16,9,11,5]},
@@ -78,7 +79,7 @@
           <thead><tr><th style="width:62px">단계</th><th>Deal · 다음 액션</th><th style="width:72px">담당팀</th><th style="width:88px">AI 준비</th><th style="width:66px;text-align:right">D-Day</th></tr></thead>
           <tbody>
             ${tasks.map(t=>`<tr ${t.href?`data-href="${t.href}"`:''}>
-              <td><span class="tag ${t.stageCls}">${t.stage}</span></td>
+              <td><span class="stg-badge ${STAGE_COLOR[t.stage]||'gray'}">${t.stage}</span></td>
               <td><div class="task-name">${t.name}</div><div class="task-sub">${t.sub}</div></td>
               <td>${avatars(t.team)}</td>
               <td><div class="ai-ready"><div class="ai-prog-bar"><i style="width:${t.pct}%"></i></div><span class="ai-pct">${pctLabel(t.pct)}</span></div></td>
@@ -94,7 +95,7 @@
       <div class="team-grid">
         ${team.map(m=>`<div class="team-member">
           <div class="tm-header"><div class="tm-avatar logo-box ${m.cls}">${m.av}</div><div><div class="tm-name">${m.name}</div><div class="tm-role">${m.role}</div></div></div>
-          <div class="tm-deals">${m.deals.map(d=>`<div class="tm-deal"><span class="td-name">${d[0]}</span><span class="tag ${d[2]}" style="font-size:9.5px;padding:1px 6px;height:18px">${d[1]}</span></div>`).join('')}</div>
+          <div class="tm-deals">${m.deals.map(d=>`<div class="tm-deal"><span class="td-name">${d[0]}</span><span class="stg-badge ${STAGE_COLOR[d[1]]||'gray'}" style="font-size:9.5px;padding:2px 8px;height:auto">${d[1]}</span></div>`).join('')}</div>
           <div><div class="tm-load-label"><span>업무 부하</span><span style="font-weight:700;color:${m.loadCls==='ok'?'var(--green)':'var(--t1)'}">${m.loadTxt}</span></div><div class="tm-load-bar"><i style="width:${m.load}%"></i></div></div>
         </div>`).join('')}
       </div>

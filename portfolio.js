@@ -95,7 +95,7 @@
     <div class="card reveal d7">
       <div class="card-h bordered"><h3>포트폴리오 현황 <span style="font-weight:500;color:var(--t4);font-size:13px">전체 24건</span></h3><div class="card-h-right"><input class="pf-input" placeholder="Deal 검색..."><select class="pf-select"><option>전체 산업</option><option>전력·에너지</option><option>바이오</option></select></div></div>
       <div class="tbl-wrap"><table class="ptbl">
-        <thead><tr><th style="width:190px">Deal</th><th>산업</th><th>투자 / 회수일</th><th style="width:160px">IRR (예상 → 실현)</th><th style="width:130px">회수 진행</th><th>AI 신호</th><th>담당</th><th></th></tr></thead>
+        <thead><tr><th style="width:190px">Deal</th><th>산업</th><th>투자 / 회수일</th><th style="width:160px">IRR (예상 → 실현)</th><th style="width:130px">회수 진행</th><th>AI 신호</th><th style="width:72px">담당</th><th style="width:120px">조치</th></tr></thead>
         <tbody>${tableRows.map(r=>row(r)).join('')}</tbody>
       </table></div>
     </div>
@@ -123,13 +123,13 @@
   function row(r){
     const d=r.date.split('|');
     return `<tr><td><div class="deal-name">${r.n}</div><div class="deal-meta">${r.meta[0]?`<span class="badge ${r.meta[0]==='warn'?'red':'amber'}" style="height:17px;font-size:9px">${r.meta[1]}</span>`:''}${r.meta[2]}</div></td>
-      <td><span class="badge gray">${r.ind}</span></td>
-      <td><div class="date-cell">${d[0]}<br>${d[1]}</div></td>
+      <td style="text-align:center"><span class="badge gray">${r.ind}</span></td>
+      <td style="text-align:center"><div class="date-cell">${d[0]}<br>${d[1]}</div></td>
       <td><div class="irr-cell"><span class="irr-e">${r.irr[0]}</span><span style="color:var(--t4)">→</span><span class="irr-a" ${r.irr[3]==='red'?'style="color:var(--red)"':''}>${r.irr[1]}</span>${r.irr[2]?`<span class="irr-${r.irr[3]}">${r.irr[2]}</span>`:''}</div></td>
       <td><div class="prog-bar"><i style="width:${r.prog[0]}%${r.prog[2]?`;background:${r.prog[2]}`:''}"></i></div><div class="prog-l" ${r.prog[2]?`style="color:${r.prog[2]}"`:''}>${r.prog[1]}</div></td>
-      <td><span class="signal sig-${r.sig[0]}"><span class="signal-dot"></span>${r.sig[1]}</span></td>
-      <td><span class="mgr-badge">${r.mgr}</span></td>
-      <td><button class="act-btn ${r.act[0]==='warn'?'warn':''}" ${r.act[2]?`data-chip="${r.act[2]}"`:`data-toast="${r.act[1]} (프로토타입)"`}>${r.act[1]}</button></td></tr>`;
+      <td style="text-align:center"><span class="signal sig-${r.sig[0]}"><span class="signal-dot"></span>${r.sig[1]}</span></td>
+      <td style="text-align:center"><span class="mgr-badge">${r.mgr}</span></td>
+      <td style="text-align:center"><button class="act-btn ${r.act[0]==='warn'?'warn':''}" ${r.act[2]?`data-chip="${r.act[2]}"`:`data-toast="${r.act[1]} (프로토타입)"`}>${r.act[1]}</button></td></tr>`;
   }
 
   document.getElementById('cnt').innerHTML = html;
