@@ -133,6 +133,17 @@
         window.toast && window.toast('해당 화면은 프로토타입 범위 밖이에요 — 연결된 3개 화면을 둘러보세요');
       });
     });
+
+    // sidebar collapse toggle (persisted)
+    const applyCollapsed = (c)=>{ document.body.classList.toggle('sb-collapsed', c); };
+    if(localStorage.getItem('fp_sb_collapsed')==='1') applyCollapsed(true);
+    const cbtn = el.querySelector('.sb-collapse');
+    if(cbtn) cbtn.addEventListener('click',(e)=>{
+      e.stopPropagation();
+      const c = !document.body.classList.contains('sb-collapsed');
+      applyCollapsed(c);
+      localStorage.setItem('fp_sb_collapsed', c?'1':'0');
+    });
   };
 
   // ---- toast ----
