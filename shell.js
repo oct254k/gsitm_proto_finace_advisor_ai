@@ -42,6 +42,7 @@
     ]},
     {group:'Data & AI', items:[
       {id:'agent', label:'AI Agent', icon:'bot'},
+      {id:'ksearch', label:'지식 검색 · RAG', icon:'search', href:'search.html'},
       {id:'similar', label:'유사사례 검색', icon:'compass'},
       {id:'market', label:'시장 데이터', icon:'chart'},
       {id:'erp', label:'ERP 연동 현황', icon:'plug'},

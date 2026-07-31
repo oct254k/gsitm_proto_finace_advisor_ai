@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>화인파트너스 AI · 지식 검색 (RAG / Vector)</title>
+<meta name="ext-resource-dependency" content="assets/logo-fine.png" data-resource-id="logo" />
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="deal.css">
+<link rel="stylesheet" href="search.css">
+</head>
+<body>
+<header class="app-header" id="appHeader"></header>
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <div class="main">
+    <div class="topbar">
+      <a href="cockpit.html" class="crumb-back" title="코크핏으로"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <nav class="crumb"><a href="cockpit.html">메인</a><span>·</span><a>Data &amp; AI</a><span>·</span><strong>지식 검색 (RAG / Vector)</strong></nav>
+      <div class="topbar-spacer"></div>
+      <div class="topbar-pill"><span class="dot"></span>Vector Index <span class="num" id="idxPill">…</span></div>
+      <button class="btn sm" onclick="window.toast('원본 저장소: ~/Downloads/화인/화인_DATA_샘플자료')"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M3 7a2 2 0 012-2h4l2 2.4h8a2 2 0 012 2V18a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.7" fill="none" stroke-linejoin="round"/></svg>원본 저장소</button>
+    </div>
+
+    <div class="content">
+      <div class="content-inner" id="cnt"></div>
+      <div class="ks-foot-note">
+        <div>화인파트너스 AI Investment Decision System · v0.4.0 (Beta) · 지식 검색 (RAG)</div>
+        <div>코퍼스: 화인_DATA_샘플자료 (D-01 ~ D-06) · 인덱싱 2026-07-31 · 벡터 검색은 브라우저에서 실행됩니다</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 문서 상세 드로어 -->
+  <aside class="ks-drawer" id="docDrawer"></aside>
+  <div class="agent-scrim" id="drawerScrim"></div>
+</div>
+
+<script src="shell.js"></script>
+<script src="kb.js"></script>
+<script src="search.js"></script>
+<template id="__bundler_thumbnail" data-bg-color="#f3f4f6">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#f3f4f6"/>
+    <rect x="0" y="0" width="1200" height="70" fill="#ffffff"/>
+    <rect x="0" y="70" width="300" height="730" fill="#f9fafb"/>
+    <rect x="340" y="110" width="820" height="140" rx="16" fill="#3a4fd0"/>
+    <rect x="380" y="150" width="740" height="52" rx="12" fill="#ffffff"/>
+    <rect x="340" y="280" width="500" height="150" rx="16" fill="#ffffff"/>
+    <rect x="340" y="450" width="500" height="120" rx="16" fill="#ffffff"/>
+    <rect x="340" y="590" width="500" height="120" rx="16" fill="#ffffff"/>
+    <rect x="870" y="280" width="290" height="200" rx="16" fill="#ffffff"/>
+    <rect x="870" y="500" width="290" height="210" rx="16" fill="#ffffff"/>
+  </svg>
+</template>
+</body>
+</html>
