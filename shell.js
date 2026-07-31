@@ -40,6 +40,10 @@
       {id:'aftercare', label:'사후관리 / 회수', icon:'shield', href:'portfolio.html'},
       {id:'cashflow', label:'현금흐름', icon:'cash'},
     ]},
+    {group:'자금투자 (펀드)', items:[
+      {id:'fundverify', label:'펀드 검증', icon:'chart', href:'fund.html', badge:'1', warn:true},
+      {id:'fundlist', label:'펀드 레지스트리', icon:'db'},
+    ]},
     {group:'Data & AI', items:[
       {id:'agent', label:'AI Agent', icon:'bot'},
       {id:'ksearch', label:'지식 검색 · RAG', icon:'search', href:'search.html'},
